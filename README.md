@@ -54,3 +54,7 @@ Specify what it takes to deploy your app.
 * Development Browser Extensions
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+
+
+https://github.com/itp404-fall-2018/ember-crud
+https://ember-twiddle.com/2c083611aaaedfd978e1080104c03977?numColumns=2&openFiles=templates.application.hbs%2Ctemplates.application.hbs

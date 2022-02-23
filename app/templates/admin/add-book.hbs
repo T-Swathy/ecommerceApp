@@ -1,0 +1,173 @@
+{{page-title 'AddBook'}}
+
+<div class='container-fluid pb-3 mt-5' style='background-color: aquamarine;'>
+  <div class='container mt-5'>
+
+    <div class='row mb-4'>
+      <div class='col'>
+        <div class='form-outline'>
+
+          <input
+            type='text'
+            id='bookName'
+            value={{this.bookName}}
+            onchange={{action (mut this.bookName) value='target.value'}}
+            class='form-control'
+            id='exampleFormControlInput1'
+            placeholder='Book Name'
+          />
+
+        </div>
+      </div>
+      <div class='col'>
+        <div class='form-outline'>
+
+          <input
+            type='number'
+            id='price'
+            value={{this.price}}
+            onchange={{action (mut this.price) value='target.value'}}
+            class='form-control'
+            id='inputPassword'
+            placeholder='Price'
+          />
+
+        </div>
+      </div>
+    </div>
+
+    <div class='mb-3 mt-3'>
+
+      <input
+        type='text'
+        id='authorName'
+        value={{this.author}}
+        onchange={{action (mut this.author) value='target.value'}}
+        class='form-control'
+        id='inputPassword'
+        placeholder='Author Name'
+      />
+    </div>
+    <div class='mb-3 mt-3'>
+
+      <input
+        type='text'
+        id='publisher'
+        value={{this.publisher}}
+        onchange={{action (mut this.publisher) value='target.value'}}
+        class='form-control'
+        id='inputPassword'
+        placeholder='publisher'
+      />
+    </div>
+    <div class='mb-3 mt-3'>
+
+      <input
+        type='text'
+        id='releaseDate'
+        value={{this.releaseDate}}
+        onchange={{action (mut this.releaseDate) value='target.value'}}
+        class='form-control'
+        id='inputPassword'
+        placeholder='Release Date'
+      />
+    </div>
+
+    <div class='row mb-4'>
+      <div class='col'>
+        <div class='form-outline'>
+
+          <input
+            type='text'
+            id='width'
+            value={{this.width}}
+            onchange={{action (mut this.width) value='target.value'}}
+            class='form-control'
+            placeholder='Width'
+          />
+
+        </div>
+      </div>
+      <div class='col'>
+        <div class='form-outline'>
+
+          <input
+            type='text'
+            id='height'
+            value={{this.height}}
+            onchange={{action (mut this.height) value='target.value'}}
+            class='form-control'
+            placeholder='Height'
+          />
+
+        </div>
+      </div>
+    </div>
+    <div class='row mb-4'>
+      <div class='col'>
+        <div class='form-outline'>
+
+          <input
+            type='text'
+            id='language'
+            value={{this.language}}
+            onchange={{action (mut this.language) value='target.value'}}
+            class='form-control'
+            placeholder='Language'
+          />
+
+        </div>
+      </div>
+      <div class='col'>
+        <div class='form-outline'>
+
+          <input
+            type='text'
+            id='pages'
+            value={{this.pages}}
+            onchange={{action (mut this.pages) value='target.value'}}
+            class='form-control'
+            placeholder='No of Pages'
+          />
+
+        </div>
+      </div>
+    </div>
+
+    <div class='mb-3 mt-3'>
+
+      <textarea
+        value={{this.about}}
+        onchange={{action (mut this.about) value='target.value'}}
+        class='form-control'
+        id='exampleFormControlTextarea1'
+        rows='6'
+        placeholder='About the Book'
+      ></textarea>
+
+    </div>
+
+    <div>
+      <button
+        type='button'
+        class='btn btn-outline-success'
+        {{action
+          this.createBook
+          this.bookName
+          this.price
+          this.author
+          this.publisher
+          this.releaseDate
+          this.width
+          this.height
+          this.language
+          this.pages
+          this.about
+        }}
+      >Add</button>
+    </div>
+
+  </div>
+</div>
+
+{{outlet}}

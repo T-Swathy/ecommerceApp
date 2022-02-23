@@ -1,0 +1,24 @@
+.bookTitle{
+    font-family: 'Merriweather Sans', sans-serif;
+}
+.bookPrice{
+    font-family: 'Kite One', sans-serif;
+    font-style:italic;
+    color:#804FB3;
+    font-size: 1.25em;
+}
+.displayBox{
+    height:400px;
+    width:300px;
+}
+.checked {
+    color: orange;
+  }
+.cardButton
+{
+    border-radius:25px;
+    background-color: #9969C7;
+    width:250px;
+    color:white;
+
+}

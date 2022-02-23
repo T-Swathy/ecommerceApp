@@ -1,0 +1,163 @@
+{{page-title "EditBook"}}
+<div class='container'>
+
+
+    <div class='row mb-4'>
+      <div class='col'>
+        <div class='form-outline'>
+
+          <input
+            type='text'
+            id='bookName'
+            value={{this.model.bookName}}
+            onchange={{action (mut this.modelbookName) value='target.value'}}
+            class='form-control'
+            id='exampleFormControlInput1'
+            placeholder='Book Name'
+          />
+
+        </div>
+      </div>
+      <div class='col'>
+        <div class='form-outline'>
+
+          <input
+            type='number'
+            id='price'
+            value={{this.model.price}}
+            onchange={{action (mut this.model.price) value='target.value'}}
+            class='form-control'
+            id='inputPassword'
+            placeholder='Price'
+          />
+
+        </div>
+      </div>
+    </div>
+
+    <div class='mb-3 mt-3'>
+
+      <input
+        type='text'
+        id='authorName'
+        value={{this.model.author}}
+        onchange={{action (mut this.model.author) value='target.value'}}
+        class='form-control'
+        id='inputPassword'
+        placeholder='Author Name'
+      />
+    </div>
+    <div class='mb-3 mt-3'>
+
+      <input
+        type='text'
+        id='publisher'
+        value={{this.model.publisher}}
+        onchange={{action (mut this.model.publisher) value='target.value'}}
+        class='form-control'
+        id='inputPassword'
+        placeholder='publisher'
+      />
+    </div>
+    <div class='mb-3 mt-3'>
+
+      <input
+        type='text'
+        id='releaseDate'
+        value={{this.model.releaseDate}}
+        onchange={{action (mut this.model.releaseDate) value='target.value'}}
+        class='form-control'
+        id='inputPassword'
+        placeholder='Release Date'
+      />
+    </div>
+
+    <div class='row mb-4'>
+      <div class='col'>
+        <div class='form-outline'>
+
+          <input
+            type='text'
+            id='width'
+            value={{this.model.width}}
+            onchange={{action (mut this.model.width) value='target.value'}}
+            class='form-control'
+            placeholder='Width'
+          />
+
+        </div>
+      </div>
+      <div class='col'>
+        <div class='form-outline'>
+
+          <input
+            type='text'
+            id='height'
+            value={{this.model.height}}
+            onchange={{action (mut this.model.height) value='target.value'}}
+            class='form-control'
+            placeholder='Height'
+          />
+
+        </div>
+      </div>
+    </div>
+    <div class='row mb-4'>
+      <div class='col'>
+        <div class='form-outline'>
+
+          <input
+            type='text'
+            id='language'
+            value={{this.model.language}}
+            onchange={{action (mut this.model.language) value='target.value'}}
+            class='form-control'
+            placeholder='Language'
+          />
+
+        </div>
+      </div>
+      <div class='col'>
+        <div class='form-outline'>
+
+          <input
+            type='text'
+            id='pages'
+            value={{this.model.pages}}
+            onchange={{action (mut this.model.pages) value='target.value'}}
+            class='form-control'
+            placeholder='No of Pages'
+          />
+
+        </div>
+      </div>
+    </div>
+
+    <div class='mb-3 mt-3'>
+
+      <textarea
+        value={{this.model.about}}
+        onchange={{action (mut this.model.about) value='target.value'}}
+        class='form-control'
+        id='exampleFormControlTextarea1'
+        rows='6'
+        placeholder='About the Book'
+      ></textarea>
+
+    </div>
+
+  
+
+  <div>
+    <button
+      type='button'
+      class='btn btn-outline-success'
+      {{action
+        this.editPost
+        this.model
+      }}
+    >Add</button>
+  </div>
+</div>
+
+{{outlet}}

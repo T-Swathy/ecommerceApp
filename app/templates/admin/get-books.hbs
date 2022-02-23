@@ -1,0 +1,34 @@
+{{page-title 'GetBooks'}}
+<button type="button" class="btn btn-danger" {{action this.deleteSelectedBooks}}>Delete</button> 
+<div
+  class='d-flex flex-row bd-highlight mb-3 mt-5 justify-content-around flex-wrap'
+>
+  {{#each this.model as |book|}}
+     <div class="card shadow mb-5 bg-white rounded displayBox">
+      <div class="card-body">
+         <input type="checkbox" class="form-check-input" name="selectedBooks[]" checked={{book.isChecked}}  onChange={{action this.toggleValue book}}>
+        <h4 class="card-title bookTitle">{{book.bookName}}</h4>
+        <h3 class="bookPrice mt-3">${{book.price}}</h3>
+        <p class="card-text mt-3">By: {{book.author}} | Publisher:{{book.publisher}} | Release Date:{{book.releaseDate}}</p>
+        <hr>
+
+        <LinkTo
+        @route='admin.getBookById'
+        @model={{book.id}}
+        class='btn mt-3 cardButton'
+      >View</LinkTo>
+     
+        
+      </div>
+    </div>
+     
+   
+     
+
+    
+  
+
+  {{/each}}
+</div>
+
+{{outlet}}
