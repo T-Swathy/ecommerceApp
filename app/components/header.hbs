@@ -9,7 +9,7 @@
           <ul class="navbar-nav">
         {{yield}}
          <li class="nav-item">
-          <LinkTo @route="logIn" class="nav-link">Log Out</LinkTo>
+          <LinkTo @route="logIn" class="nav-link" {{on "click" this.isLoggedOut}}>Log Out</LinkTo>
         </li>
         </ul>
         </div>

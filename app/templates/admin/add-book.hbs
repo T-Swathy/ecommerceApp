@@ -1,173 +1,155 @@
 {{page-title 'AddBook'}}
 
-<div class='container-fluid pb-3 mt-5' style='background-color: aquamarine;'>
-  <div class='container mt-5'>
+<div class='container-fluid pb-3 mt-5'>
 
-    <div class='row mb-4'>
-      <div class='col'>
-        <div class='form-outline'>
+  <div class='container shadow mt-5 p-5'>
+    <form {{on 'submit' this.createBook}}>
 
-          <input
-            type='text'
-            id='bookName'
-            value={{this.bookName}}
-            onchange={{action (mut this.bookName) value='target.value'}}
-            class='form-control'
-            id='exampleFormControlInput1'
-            placeholder='Book Name'
-          />
+      <div class='row mb-4'>
+        <div class='col'>
+          <div class='form-outline'>
+            <label for='bookName' class='form-label'>Book name</label>
+            <input
+              type='text'
+              id='bookName'
+              value={{this.bookName}}
+              {{on 'change' this.updateName}}
+              class='form-control'
+              required
+            />
 
+          </div>
+        </div>
+        <div class='col'>
+          <div class='form-outline'>
+            <label for='price' class='form-label'>Price</label>
+            <input
+              type='number'
+              id='price'
+              value={{this.price}}
+              {{on 'change' this.updatePrice}}
+              class='form-control'
+              required
+            />
+
+          </div>
         </div>
       </div>
-      <div class='col'>
-        <div class='form-outline'>
 
-          <input
-            type='number'
-            id='price'
-            value={{this.price}}
-            onchange={{action (mut this.price) value='target.value'}}
-            class='form-control'
-            id='inputPassword'
-            placeholder='Price'
-          />
+      <div class='mb-3 mt-3'>
+        <label for='authorName' class='form-label'>Author Name</label>
+        <input
+          type='text'
+          id='authorName'
+          value={{this.author}}
+          {{on 'change' this.updateAuthor}}
+          class='form-control'
+          required
+        />
+      </div>
+      <div class='mb-3 mt-3'>
+        <label for='publisher' class='form-label'>Publisher</label>
+        <input
+          type='text'
+          id='publisher'
+          value={{this.publisher}}
+          {{on 'change' this.updatePublisher}}
+          class='form-control'
+          required
+        />
+      </div>
+      <div class='mb-3 mt-3'>
+        <label for='releaseDate' class='form-label'>Released Date</label>
+        <input
+          type='date'
+          id='releaseDate'
+          value={{this.releaseDate}}
+          {{on 'change' this.updateReleaseDate}}
+          class='form-control'
+          required
+        />
+      </div>
 
+      <div class='row mb-4'>
+        <div class='col'>
+          <div class='form-outline'>
+            <label for='width' class='form-label'>Width</label>
+            <input
+              type='text'
+              id='width'
+              value={{this.width}}
+              {{on 'change' this.updateWidth}}
+              class='form-control'
+              required
+            />
+
+          </div>
+        </div>
+        <div class='col'>
+          <div class='form-outline'>
+            <label for='height' class='form-label'>Height</label>
+            <input
+              type='text'
+              id='height'
+              value={{this.height}}
+              {{on 'change' this.updateHeight}}
+              class='form-control'
+              required
+            />
+
+          </div>
         </div>
       </div>
-    </div>
+      <div class='row mb-4'>
+        <div class='col'>
+          <div class='form-outline'>
+            <label for='language' class='form-label'>Language</label>
+            <input
+              type='text'
+              id='language'
+              value={{this.language}}
+              {{on 'change' this.updateLanguage}}
+              class='form-control'
+              required
+            />
 
-    <div class='mb-3 mt-3'>
+          </div>
+        </div>
+        <div class='col'>
+          <div class='form-outline'>
+            <label for='pages' class='form-label'>No of Pages</label>
+            <input
+              type='text'
+              id='pages'
+              value={{this.pages}}
+              {{on 'change' this.updatePages}}
+              class='form-control'
+              required
+            />
 
-      <input
-        type='text'
-        id='authorName'
-        value={{this.author}}
-        onchange={{action (mut this.author) value='target.value'}}
-        class='form-control'
-        id='inputPassword'
-        placeholder='Author Name'
-      />
-    </div>
-    <div class='mb-3 mt-3'>
-
-      <input
-        type='text'
-        id='publisher'
-        value={{this.publisher}}
-        onchange={{action (mut this.publisher) value='target.value'}}
-        class='form-control'
-        id='inputPassword'
-        placeholder='publisher'
-      />
-    </div>
-    <div class='mb-3 mt-3'>
-
-      <input
-        type='text'
-        id='releaseDate'
-        value={{this.releaseDate}}
-        onchange={{action (mut this.releaseDate) value='target.value'}}
-        class='form-control'
-        id='inputPassword'
-        placeholder='Release Date'
-      />
-    </div>
-
-    <div class='row mb-4'>
-      <div class='col'>
-        <div class='form-outline'>
-
-          <input
-            type='text'
-            id='width'
-            value={{this.width}}
-            onchange={{action (mut this.width) value='target.value'}}
-            class='form-control'
-            placeholder='Width'
-          />
-
+          </div>
         </div>
       </div>
-      <div class='col'>
-        <div class='form-outline'>
 
-          <input
-            type='text'
-            id='height'
-            value={{this.height}}
-            onchange={{action (mut this.height) value='target.value'}}
-            class='form-control'
-            placeholder='Height'
-          />
+      <div class='mb-3 mt-3'>
+        <label for='about' class='form-label'>About the Book</label>
+        <textarea
+          value={{this.about}}
+          {{on 'change' this.updateAbout}}
+          class='form-control'
+          id='about'
+          rows='6'
+          required
+        ></textarea>
 
-        </div>
       </div>
-    </div>
-    <div class='row mb-4'>
-      <div class='col'>
-        <div class='form-outline'>
 
-          <input
-            type='text'
-            id='language'
-            value={{this.language}}
-            onchange={{action (mut this.language) value='target.value'}}
-            class='form-control'
-            placeholder='Language'
-          />
-
-        </div>
+      <div>
+        <button type='submit' class='btn btn-outline-success'>Add</button>
       </div>
-      <div class='col'>
-        <div class='form-outline'>
-
-          <input
-            type='text'
-            id='pages'
-            value={{this.pages}}
-            onchange={{action (mut this.pages) value='target.value'}}
-            class='form-control'
-            placeholder='No of Pages'
-          />
-
-        </div>
-      </div>
-    </div>
-
-    <div class='mb-3 mt-3'>
-
-      <textarea
-        value={{this.about}}
-        onchange={{action (mut this.about) value='target.value'}}
-        class='form-control'
-        id='exampleFormControlTextarea1'
-        rows='6'
-        placeholder='About the Book'
-      ></textarea>
-
-    </div>
-
-    <div>
-      <button
-        type='button'
-        class='btn btn-outline-success'
-        {{action
-          this.createBook
-          this.bookName
-          this.price
-          this.author
-          this.publisher
-          this.releaseDate
-          this.width
-          this.height
-          this.language
-          this.pages
-          this.about
-        }}
-      >Add</button>
-    </div>
-
+    </form>
   </div>
+
 </div>
 
 {{outlet}}

@@ -1,0 +1,20 @@
+{{page-title 'User'}}
+<Header>
+  <li class='nav-item'>
+    <LinkTo @route='user.viewBooks' class='nav-link'>View</LinkTo>
+  </li>
+
+  <li class='nav-item ms-auto'>
+    <LinkTo
+      @route='user.cart'
+      class='fa fa-shopping-cart nav-link'
+      style='font-size:28px;color:black'
+    />
+    <span
+      class='badge badge-notify'
+    >{{this.shoppingCart.itemList.length}}</span>
+  </li>
+
+</Header>
+
+{{outlet}}

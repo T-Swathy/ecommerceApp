@@ -4,11 +4,13 @@ import { action } from '@ember/object';
 import window from 'ember-window-mock';
 
 export default class AdminEditBookController extends Controller {
+  @service router;
   @service store;
+
   @action
   editPost(model) {
     if (window.confirm('Are you sure you want to edit this post?')) {
-      this.store.findRecord('book', id).then(function (book) {
+      this.store.findRecord('book', model.id).then(function (book) {
         book.set('bookName', model.bookName);
         book.set('price', model.price);
         book.set('author', model.author);
@@ -21,6 +23,8 @@ export default class AdminEditBookController extends Controller {
         book.set('about', model.about);
         book.save();
       });
+      alert('Edited successfully');
+      this.router.transitionTo('admin.getBookById', model.id);
     }
   }
 }

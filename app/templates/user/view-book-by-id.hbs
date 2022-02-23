@@ -1,0 +1,12 @@
+{{page-title 'ViewBookById'}}
+<BookDetails @model={{this.model}}>
+
+  <button
+    class='btn cartBtn'
+    type='button'
+    {{on 'click' (fn this.addToCart this.model)}}
+  >Add to Cart <i class='fa fa-shopping-cart'></i></button>
+ 
+</BookDetails>
+
+{{outlet}}

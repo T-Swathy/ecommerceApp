@@ -1,0 +1,54 @@
+{{page-title 'Cart'}}
+
+<main class='container mt-5'>
+  <h2 class='h1 ml-5'>Shopping Cart</h2>
+
+  {{#each this.shoppingCart.itemList as |item|}}
+    <div class='row shadow p-2 mt-5'>
+      <h4 class='text-left bookTitle'>{{item.bookName}}
+
+        <i
+          class='fa fa-times btn pull-right'
+          style='font-size:26px;color:black;'
+          {{on 'click' (fn this.removeItem item)}}
+        ></i>
+
+      </h4>
+      <h3 class='text-left mt-3 bookPrice'>$
+        {{item.price}}
+      </h3>
+      <h6 class='italicsFont'>Quantity
+        <span>
+          <input
+            type='number'
+            class='form-control ms-3 itemCount'
+            value={{item.count}}
+            {{on 'input' (fn this.updateItemCount item)}}
+          /></span></h6>
+
+    </div>
+
+  {{/each}}
+  <hr />
+  <section class='w-25 mt-5 mb-5 pull-right'>
+
+    <div class='row'>
+      <span class='col'><h3>SubTotal</h3></span>
+      <span class='col pull-right'><h5>{{this.subTotal}}</h5></span>
+    </div>
+    <div class='row'>
+      <span class='col'><h3>Tax</h3></span>
+      <span class='col pull-right'><h5>{{this.tax}}</h5></span>
+    </div>
+    <div class='row'>
+      <span class='col'><h3>Total</h3></span>
+      <span class='col pull-right'><h5>{{this.total}}</h5></span>
+      <button type='button' class='btn btn-success mt-5 btn-lg'>Check Out</button>
+
+    </div>
+
+  </section>
+
+</main>
+
+{{outlet}}

@@ -12,12 +12,13 @@ Router.map(function () {
   this.route('admin', function () {
     this.route('addBook');
     this.route('getBooks');
-
     this.route('getBookById', { path: '/book/:id' });
     this.route('editBook', { path: '/editBook/:id' });
   });
 
   this.route('user', function () {
-    this.route('homePage');
+    this.route('viewBooks');
+    this.route('viewBookById', { path: '/viewBook/:id' });
+    this.route('cart');
   });
 });

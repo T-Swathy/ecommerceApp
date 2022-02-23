@@ -8,32 +8,19 @@ import MutableArray from '@ember/array/mutable';
 export default class AdminGetBooksController extends Controller {
   @service store;
   @tracked selectedBooks = [];
- 
- @action
-  toggleValue(book){
-   if(book.isChecked===true)
-   book.isChecked=false;
-   else
-     book.isChecked=true;
-   this.getSelectedBooks(book.isChecked,book.id);
-   console.log(book.isChecked);
-  
-  }
-  getSelectedBooks(value,bookId) {
-     if(value){
-     this.selectedBooks.addObject(bookId);
-     console.log(this.selectedBooks);
-     console.log(this.selectedBooks.length);
-     }
-     else
-     {
-         this.selectedBooks.removeObject(bookId);
-        console.log(this.selectedBooks);
-         console.log(this.selectedBooks.length);
 
-     }
-   
-  
+  @action
+  toggleValue(book) {
+    if (book.isChecked === true) book.isChecked = false;
+    else book.isChecked = true;
+    this.getSelectedBooks(book.isChecked, book.id);
+  }
+  getSelectedBooks(value, bookId) {
+    if (value) {
+      this.selectedBooks.addObject(bookId);
+    } else {
+      this.selectedBooks.removeObject(bookId);
+    }
   }
 
   @action

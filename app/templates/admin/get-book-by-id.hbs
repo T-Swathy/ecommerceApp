@@ -1,41 +1,16 @@
-{{page-title "GetBookById"}}
-<div class="container">
-<h1 class="h1 mt-5 text">{{this.model.bookName}}</h1>
-<h2 class="mt-5 bookPrice"> ${{this.model.price}} </h2>
-<p>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star checked"></span>
-</p>
-<p class="lead mt-5"> By:{{this.model.author}} | Publisher:{{this.model.publisher}} | ReleaseDate:{{this.model.releaseDate}}</p>
-<hr> 
-<div class="container-fluid p-2 bg-light mt-2">
-<h4>About the Book</h4>
-</div>
-<p class="mt-3">{{this.model.about}}</p>
-<hr class="mt-3">
-<div class="container-fluid p-2 bg-light mt-2">
-<h4>Book Details</h4>
-</div>
-<h5 class="mt-3">Width:<span class="lead">{{this.model.width}}</span></h5>
-<h5 class="mt-3">Height:<span class="lead">{{this.model.height}}</span></h5>
-<h5 class="mt-3">No of Pages:<span class="lead">{{this.model.pages}}</span></h5>
-<h5 class="mt-3">Language:<span class="lead">{{this.model.language}}</span></h5>
-<hr class="mt-3">
-
-<div class="container-fluid p-2 bg-light mt-2">
-<h4>More Options</h4>
-<i class="fa fa-trash-o btn" style="font-size:48px;" {{action this.deleteBook this.model}}></i>
-<LinkTo
-        @route='admin.editBook'
-        @model={{this.model.id}}
-
-      class="fa fa-pencil" style="font-size:48px;"/>
-      
-</div>
-
-
-</div>
+{{page-title 'GetBookById'}}
+<BookDetails @model={{this.model}}>
+  <h4>More Options</h4>
+  <i
+    class='fa fa-trash-o btn'
+    style='font-size:48px;'
+    {{action this.deleteBook this.model}}
+  ></i>
+  <LinkTo
+    @route='admin.editBook'
+    @model={{this.model.id}}
+    class='fa fa-pencil btn'
+    style='font-size:48px;'
+  />
+</BookDetails>
 {{outlet}}

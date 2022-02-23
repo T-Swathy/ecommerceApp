@@ -1,25 +1,43 @@
 {{page-title 'LogIn'}}
 
-
 <div class='container w-25 h-50 shadow p-3 rounded logInBox'>
-  <h1 class="text-center text mt-3">Log In</h1>
+  <h1 class='text-center text mt-3'>Log In</h1>
 
   <div class='mb-3'>
-    <label for='exampleFormControlInput1' class='form-label mt-2 text'> User Name</label>
-    <input type='text' value={{this.userName}} onchange={{action (mut this.userName) value='target.value' }}
-      class='form-control input' id='exampleFormControlInput1' />
+    <label for='uname' class='form-label mt-2 text'> User Name</label>
+    <input
+      type='text'
+      value={{this.userName}}
+      {{on 'change' this.updateUserName}}
+      class='form-control input'
+      id='uname'
+      required
+    />
   </div>
   <div class='mb-3'>
-    <label for='inputPassword' class='col-sm-2 col-form-label mt-2 text'>Password</label>
+    <label
+      for='inputPassword'
+      class='col-sm-2 col-form-label mt-2 text'
+    >Password</label>
 
-    <input type='password' value={{this.password}} onchange={{action (mut this.password) value='target.value' }}
-      class='form-control input' id='inputPassword' />
+    <input
+      type='password'
+      value={{this.password}}
+      {{on 'change' this.updatePassword}}
+      class='form-control input'
+      id='inputPassword'
+      required
+    />
   </div>
 
   <div>
-    <button type='button' class="mt-5 mb-5 button text" {{action this.userLogIn this.userName this.password}}>LOGIN</button>
+    <button
+      type='button'
+      class='mt-5 mb-5 button text'
+      {{on 'click' this.userLogIn}}
+    >LOGIN</button>
   </div>
+  
 </div>
-
 
 {{outlet}}
