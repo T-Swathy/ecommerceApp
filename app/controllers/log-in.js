@@ -6,31 +6,22 @@ import { inject as service } from '@ember/service';
 export default class LogInController extends Controller {
   @service router;
   @service userAuth;
-  @tracked userName;
-  @tracked password;
-  @action
-  updateUserName(event) {
-    this.userName = event.target.value;
-  }
-  @action
-  updatePassword(event) {
-    this.password = event.target.value;
-  }
+  @tracked userName = '';
+  @tracked password = '';
+
   @action
   userLogIn() {
-    console.log(typeof this.password);
-    if (
-      typeof this.userName != 'undefined' &&
-      typeof this.password != 'undefined'
-    ) {
+    if (this.userName != '' && this.password != '') {
       if (this.userName == 'admin' && this.password == 'admin') {
         this.router.transitionTo('admin.getBooks');
         this.userAuth.isLoggedIn();
-        this.userName = undefined;
+        this.userName = '';
+        this.password = '';
       } else {
         this.router.transitionTo('user.viewBooks');
         this.userAuth.isLoggedIn();
-        this.password = undefined;
+        this.userName = '';
+        this.password = '';
       }
     } else alert('Please enter username and password');
   }

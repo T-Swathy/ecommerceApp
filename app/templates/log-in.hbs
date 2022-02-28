@@ -5,10 +5,9 @@
 
   <div class='mb-3'>
     <label for='uname' class='form-label mt-2 text'> User Name</label>
-    <input
-      type='text'
-      value={{this.userName}}
-      {{on 'change' this.updateUserName}}
+    <Input
+      @type='text'
+      @value={{this.userName}}
       class='form-control input'
       id='uname'
       required
@@ -20,10 +19,9 @@
       class='col-sm-2 col-form-label mt-2 text'
     >Password</label>
 
-    <input
-      type='password'
-      value={{this.password}}
-      {{on 'change' this.updatePassword}}
+    <Input
+      @type='password'
+      @value={{this.password}}
       class='form-control input'
       id='inputPassword'
       required
@@ -37,7 +35,7 @@
       {{on 'click' this.userLogIn}}
     >LOGIN</button>
   </div>
-  
+
 </div>
 
 {{outlet}}
