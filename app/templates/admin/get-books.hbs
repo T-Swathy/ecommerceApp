@@ -27,12 +27,13 @@
         <div class='card shadow mb-5 bg-white rounded displayBox'>
           <div class='card-body'>
             <div style='height:80%;'>
-              <input
-                type='checkbox'
+              <Input
+                @type='checkbox'
                 class='form-check-input'
                 name='selectedBooks[]'
-                checked={{book.isChecked}}
-                onChange={{action this.toggleValue book}}
+                @checked={{book.isChecked}}
+                {{on "input" (fn this.getSelectedBooks book)}}
+              
               />
               <h4 class='card-title bookTitle'>{{book.bookName}}</h4>
               <h3 class='bookPrice mt-3'>${{book.price}}</h3>

@@ -9,11 +9,10 @@
         <div class='col'>
           <div class='form-outline'>
             <label for='bookName' class='form-label'>Book name</label>
-            <input
-              type='text'
+            <Input
+              @type='text'
               id='bookName'
-              value={{this.bookName}}
-              {{on 'change' this.updateName}}
+              @value={{this.bookName}}
               class='form-control'
               required
             />
@@ -23,11 +22,10 @@
         <div class='col'>
           <div class='form-outline'>
             <label for='price' class='form-label'>Price</label>
-            <input
-              type='number'
+            <Input
+              @type='number'
               id='price'
-              value={{this.price}}
-              {{on 'change' this.updatePrice}}
+              @value={{this.price}}
               class='form-control'
               required
             />
@@ -38,33 +36,30 @@
 
       <div class='mb-3 mt-3'>
         <label for='authorName' class='form-label'>Author Name</label>
-        <input
-          type='text'
+        <Input
+          @type='text'
           id='authorName'
-          value={{this.author}}
-          {{on 'change' this.updateAuthor}}
+          @value={{this.author}}
           class='form-control'
           required
         />
       </div>
       <div class='mb-3 mt-3'>
         <label for='publisher' class='form-label'>Publisher</label>
-        <input
-          type='text'
+        <Input
+          @type='text'
           id='publisher'
-          value={{this.publisher}}
-          {{on 'change' this.updatePublisher}}
+          @value={{this.publisher}}
           class='form-control'
           required
         />
       </div>
       <div class='mb-3 mt-3'>
         <label for='releaseDate' class='form-label'>Released Date</label>
-        <input
-          type='date'
+        <Input
+          @type='date'
           id='releaseDate'
-          value={{this.releaseDate}}
-          {{on 'change' this.updateReleaseDate}}
+          @value={{this.releaseDate}}
           class='form-control'
           required
         />
@@ -74,11 +69,10 @@
         <div class='col'>
           <div class='form-outline'>
             <label for='width' class='form-label'>Width</label>
-            <input
-              type='text'
+            <Input
+              @type='text'
               id='width'
-              value={{this.width}}
-              {{on 'change' this.updateWidth}}
+              @value={{this.width}}
               class='form-control'
               required
             />
@@ -88,11 +82,10 @@
         <div class='col'>
           <div class='form-outline'>
             <label for='height' class='form-label'>Height</label>
-            <input
-              type='text'
+            <Input
+              @type='text'
               id='height'
-              value={{this.height}}
-              {{on 'change' this.updateHeight}}
+              @value={{this.height}}
               class='form-control'
               required
             />
@@ -104,11 +97,10 @@
         <div class='col'>
           <div class='form-outline'>
             <label for='language' class='form-label'>Language</label>
-            <input
-              type='text'
+            <Input
+              @type='text'
               id='language'
-              value={{this.language}}
-              {{on 'change' this.updateLanguage}}
+              @value={{this.language}}
               class='form-control'
               required
             />
@@ -118,11 +110,10 @@
         <div class='col'>
           <div class='form-outline'>
             <label for='pages' class='form-label'>No of Pages</label>
-            <input
-              type='text'
+            <Input
+              @type='text'
               id='pages'
-              value={{this.pages}}
-              {{on 'change' this.updatePages}}
+              @value={{this.pages}}
               class='form-control'
               required
             />
@@ -133,14 +124,13 @@
 
       <div class='mb-3 mt-3'>
         <label for='about' class='form-label'>About the Book</label>
-        <textarea
-          value={{this.about}}
-          {{on 'change' this.updateAbout}}
+        <Textarea
+          @value={{this.about}}
           class='form-control'
           id='about'
           rows='6'
           required
-        ></textarea>
+        />
 
       </div>
 

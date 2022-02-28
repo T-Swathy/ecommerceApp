@@ -4,22 +4,18 @@ import window from 'ember-window-mock';
 import { inject as service } from '@ember/service';
 import { tracked } from '@glimmer/tracking';
 import MutableArray from '@ember/array/mutable';
+import { get } from '@ember/object';
 
 export default class AdminGetBooksController extends Controller {
   @service store;
   @tracked selectedBooks = [];
 
   @action
-  toggleValue(book) {
-    if (book.isChecked === true) book.isChecked = false;
-    else book.isChecked = true;
-    this.getSelectedBooks(book.isChecked, book.id);
-  }
-  getSelectedBooks(value, bookId) {
-    if (value) {
-      this.selectedBooks.addObject(bookId);
+  getSelectedBooks(book) {
+    if (!book.isChecked) {
+      this.selectedBooks.addObject(book.id);
     } else {
-      this.selectedBooks.removeObject(bookId);
+      this.selectedBooks.removeObject(book.id);
     }
   }
 

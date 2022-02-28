@@ -1,33 +1,29 @@
-{{page-title "EditBook"}}
+{{page-title 'EditBook'}}
 <div class='container-fluid pb-3 mt-5'>
-<div class='container shadow mt-5 p-5'>
-
+  <div class='container shadow mt-5 p-5'>
 
     <div class='row mb-4'>
       <div class='col'>
         <div class='form-outline'>
-           <label for='bookName' class='form-label'>Book name</label>
-          <input
-            type='text'
+          <label for='bookName' class='form-label'>Book name</label>
+          <Input
+            @type='text'
             id='bookName'
-            value={{this.model.bookName}}
-            onchange={{action (mut this.modelbookName) value='target.value'}}
+            @value={{this.book.bookName}}
+         
             class='form-control'
-           
           />
 
         </div>
       </div>
       <div class='col'>
         <div class='form-outline'>
-         <label for='price' class='form-label'>Price</label>
-          <input
-            type='number'
+          <label for='price' class='form-label'>Price</label>
+          <Input
+            @type='number'
             id='price'
-            value={{this.model.price}}
-            onchange={{action (mut this.model.price) value='target.value'}}
+            @value={{this.book.price}}
             class='form-control'
-           
           />
 
         </div>
@@ -36,34 +32,29 @@
 
     <div class='mb-3 mt-3'>
       <label for='authorName' class='form-label'>Author Name</label>
-      <input
-        type='text'
+      <Input
+        @type='text'
         id='authorName'
-        value={{this.model.author}}
-        onchange={{action (mut this.model.author) value='target.value'}}
+        @value={{this.book.author}}
         class='form-control'
       />
     </div>
     <div class='mb-3 mt-3'>
       <label for='publisher' class='form-label'>Publisher</label>
-      <input
-        type='text'
+      <Input
+        @type='text'
         id='publisher'
-        value={{this.model.publisher}}
-        onchange={{action (mut this.model.publisher) value='target.value'}}
+        @value={{this.book.publisher}}
         class='form-control'
-     
       />
     </div>
     <div class='mb-3 mt-3'>
-        <label for='releaseDate' class='form-label'>Released Date</label>
-      <input
-        type='date'
+      <label for='releaseDate' class='form-label'>Released Date</label>
+      <Input
+        @type='date'
         id='releaseDate'
-        value={{this.model.releaseDate}}
-        onchange={{action (mut this.model.releaseDate) value='target.value'}}
+        @value={{this.book.releaseDate}}
         class='form-control'
-       
       />
     </div>
 
@@ -71,27 +62,23 @@
       <div class='col'>
         <div class='form-outline'>
           <label for='width' class='form-label'>Width</label>
-          <input
-            type='text'
+          <Input
+            @type='text'
             id='width'
-            value={{this.model.width}}
-            onchange={{action (mut this.model.width) value='target.value'}}
+            @value={{this.book.width}}
             class='form-control'
-            
           />
 
         </div>
       </div>
       <div class='col'>
         <div class='form-outline'>
-           <label for='height' class='form-label'>Height</label>
-          <input
-            type='text'
+          <label for='height' class='form-label'>Height</label>
+          <Input
+            @type='text'
             id='height'
-            value={{this.model.height}}
-            onchange={{action (mut this.model.height) value='target.value'}}
+            @value={{this.book.height}}
             class='form-control'
-         
           />
 
         </div>
@@ -100,14 +87,12 @@
     <div class='row mb-4'>
       <div class='col'>
         <div class='form-outline'>
-             <label for='language' class='form-label'>Language</label>
-          <input
-            type='text'
+          <label for='language' class='form-label'>Language</label>
+          <Input
+            @type='text'
             id='language'
-            value={{this.model.language}}
-            onchange={{action (mut this.model.language) value='target.value'}}
+            @value={{this.book.language}}
             class='form-control'
-         
           />
 
         </div>
@@ -115,13 +100,11 @@
       <div class='col'>
         <div class='form-outline'>
           <label for='pages' class='form-label'>No of Pages</label>
-          <input
-            type='text'
+          <Input
+            @type='text'
             id='pages'
-            value={{this.model.pages}}
-            onchange={{action (mut this.model.pages) value='target.value'}}
+            @value={{this.book.pages}}
             class='form-control'
-            
           />
 
         </div>
@@ -130,30 +113,23 @@
 
     <div class='mb-3 mt-3'>
       <label for='about' class='form-label'>About the Book</label>
-      <textarea
-        value={{this.model.about}}
-        onchange={{action (mut this.model.about) value='target.value'}}
+      <Textarea
+        @value={{this.book.about}}
         class='form-control'
         id='about'
         rows='6'
-       
-      ></textarea>
+      />
 
     </div>
 
-  
-
-  <div>
-    <button
-      type='button'
-      class='btn btn-outline-success'
-      {{action
-        this.editPost
-        this.model
-      }}
-    >Save</button>
+    <div>
+      <button
+        type='button'
+        class='btn btn-outline-success'
+        {{on "click" this.editPost}}
+      >Save</button>
+    </div>
   </div>
-</div>
 </div>
 
 {{outlet}}
