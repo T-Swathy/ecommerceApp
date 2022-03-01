@@ -8,11 +8,23 @@ export default class LogInController extends Controller {
   @service userAuth;
   @tracked userName = '';
   @tracked password = '';
+  @tracked isAdmin;
+
+
+  userProfile()
+  {
+    if(this.userName=='admin' && this.password == 'admin')
+    this.isAdmin=true;
+    else
+    this.isAdmin=false;
+
+  }
 
   @action
   userLogIn() {
     if (this.userName != '' && this.password != '') {
-      if (this.userName == 'admin' && this.password == 'admin') {
+      this.userProfile();
+      if (this.isAdmin) {
         this.router.transitionTo('admin.getBooks');
         this.userAuth.isLoggedIn();
         this.userName = '';
