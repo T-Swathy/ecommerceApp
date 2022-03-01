@@ -1,35 +1,42 @@
 {{yield}}
-<div class="container-fluid">
-<div
-  class='d-flex flex-row bd-highlight mb-3 mt-5 justify-content-around flex-wrap'>
-  {{#each this.model as |book|}}
-     <div class="card shadow mb-5 ml-4 bg-white rounded displayBox">
-      <div class="card-body">
-       <div style="height:80%;">
-        <h4 class="card-title bookTitle" style="height:25%;">{{book.bookName}}</h4>
-        <h3 class="bookPrice mt-3">${{book.price}}</h3>
-        <p>
-    <span class='fa fa-star checked'></span>
-    <span class='fa fa-star checked'></span>
-    <span class='fa fa-star checked'></span>
-    <span class='fa fa-star checked'></span>
-    <span class='fa fa-star checked'></span>
-  </p>
-        <h6 class="card-text mt-3">By: <span class="lead">{{book.author}}</span></h6>
-          <h6 class="card-text mt-3">Publisher: <span class="lead">{{book.publisher}}</span></h6>
-           <h6 class="card-text mt-3">Release Date: <span class="lead">{{book.releaseDate}}</span></h6>
-       </div>
-    
-       <div class="text-center">
-        <LinkTo
-        @route='user.viewBookById'
-        @model={{book.id}}
-        class='btn cardButton'
-      >View</LinkTo>
+<div class='container-fluid'>
+  <div
+    class='d-flex flex-row bd-highlight mb-3 mt-5 justify-content-around flex-wrap'
+  >
+    {{#each this.model as |book|}}
+      <div class='card shadow mb-5 ml-4 bg-white rounded displayBox'>
+        <div class='card-body'>
+          <div style='height:80%;'>
+            <h4
+              class='card-title bookTitle'
+              style='height:25%;'
+            >{{book.bookName}}</h4>
+            <h3 class='bookPrice mt-3'>${{book.price}}</h3>
+            <p>
+              <span class='fa fa-star checked'></span>
+              <span class='fa fa-star checked'></span>
+              <span class='fa fa-star checked'></span>
+              <span class='fa fa-star checked'></span>
+              <span class='fa fa-star checked'></span>
+            </p>
+            <h6 class='card-text mt-3'>By:
+              <span class='lead'>{{book.author}}</span></h6>
+            <h6 class='card-text mt-3'>Publisher:
+              <span class='lead'>{{book.publisher}}</span></h6>
+            <h6 class='card-text mt-3'>Release Date:
+              <span class='lead'>{{book.releaseDate}}</span></h6>
+          </div>
+
+          <div class='text-center'>
+            <LinkTo
+              @route='user.viewBookById'
+              @model={{book.id}}
+              class='btn cardButton'
+            >View</LinkTo>
+          </div>
+
+        </div>
       </div>
-        
-    </div>
-    </div>
-     {{/each}}
-</div>
+    {{/each}}
+  </div>
 </div>

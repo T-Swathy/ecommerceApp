@@ -2,13 +2,12 @@
 @import './navbar.css';
 @import './books.css';
 @import './cartStyle.css';
-@import './form.css';
 .footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color:#CBC3E3;
-    color: white;
-    text-align: center;
- }
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #cbc3e3;
+  color: white;
+  text-align: center;
+}

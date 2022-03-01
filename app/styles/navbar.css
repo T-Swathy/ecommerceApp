@@ -1,13 +1,11 @@
-.navbar
-{
-    background-color: #9969C7;
-    color:white;
+.navbar {
+  background-color: #9969c7;
+  color: white;
 }
-.badge-notify{
-    background:red;
-    position:relative;
-    top: -20px;
-    left: -26px;
-    border-radius:50px;
-
- }
+.badge-notify {
+  background: red;
+  position: relative;
+  top: -20px;
+  left: -26px;
+  border-radius: 50px;
+}

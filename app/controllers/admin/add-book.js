@@ -2,7 +2,9 @@ import Controller from '@ember/controller';
 import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 import { inject as service } from '@ember/service';
+
 export default class AdminAddBookController extends Controller {
+  @service router;
   @service store;
   @tracked bookName;
   @tracked price;
@@ -31,7 +33,7 @@ export default class AdminAddBookController extends Controller {
       about: this.about,
     });
     post.save();
-    alert('new Book added');
+    alert('New Book added');
     this.bookName = '';
     this.price = '';
     this.author = '';
@@ -42,6 +44,6 @@ export default class AdminAddBookController extends Controller {
     this.language = '';
     this.pages = '';
     this.about = '';
-    this.transitionToRoute('admin.getBooks');
+    this.router.transitionTo('admin.getBooks');
   }
 }

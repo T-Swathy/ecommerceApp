@@ -7,8 +7,7 @@ import window from 'ember-window-mock';
 export default class AdminEditBookController extends Controller {
   @service router;
   @service store;
-  @tracked book=this.model;
-
+  @tracked book = this.model;
 
   @action
   editPost() {
@@ -17,11 +16,11 @@ export default class AdminEditBookController extends Controller {
         book.set('bookName', this.book.bookName);
         book.set('price', this.book.price);
         book.set('author', this.book.author);
-        book.set('publisher',this.book.publisher);
+        book.set('publisher', this.book.publisher);
         book.set('releaseDate', this.book.releaseDate);
         book.set('width', this.book.width);
         book.set('height', this.book.height);
-        book.set('language',this.book.language);
+        book.set('language', this.book.language);
         book.set('pages', this.book.pages);
         book.set('about', this.book.about);
         book.save();

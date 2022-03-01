@@ -1,31 +1,23 @@
-body{
-    box-sizing: border-box;
+body {
+  box-sizing: border-box;
 }
-.logInBox
-{
-
-    background-color:#f8f8ff;
-    position:relative;
-    top:220px;
-    
+.logInBox {
+  background-color: #f8f8ff;
+  position: relative;
+  top: 220px;
 }
-.input
-{
-    border:2px solid #804FB3;
-    border-radius: 25px;
+.input {
+  border: 2px solid #804fb3;
+  border-radius: 25px;
 }
-.button
-{
-    margin-left: 10%;
-    width:80%;
-    background-color: #804FB3;
-    color:white;
-    border:2px solid #804FB3;
-    border-radius: 25px ;
-    
+.button {
+  margin-left: 10%;
+  width: 80%;
+  background-color: #804fb3;
+  color: white;
+  border: 2px solid #804fb3;
+  border-radius: 25px;
 }
-.text
-{
-    font-family: 'Catamaran', sans-serif;
-    
+.text {
+  font-family: 'Catamaran', sans-serif;
 }
