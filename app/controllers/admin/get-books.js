@@ -22,11 +22,11 @@ export default class AdminGetBooksController extends Controller {
   @action
   deleteSelectedBooks() {
     if (window.confirm('Are you sure about deleting this book?')) {
-      for (let i = 0; i < this.selectedBooks.length; i++) {
-        this.id = this.selectedBooks.objectAt(i);
-        this.book = this.store.peekRecord('book', this.id);
+     
+      this.selectedBooks.forEach(element => {
+        this.book = this.store.peekRecord('book', element);
         this.book.destroyRecord();
-      }
+      });
       this.selectedBooks.clear();
       alert('Records deleted');
     }
