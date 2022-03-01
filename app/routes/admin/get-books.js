@@ -4,7 +4,7 @@ import { inject as service } from '@ember/service';
 export default class AdminGetBooksRoute extends Route {
   @service store;
   model() {
-    let bookList = this.store.findAll('book');
-    return bookList;
+    return this.store.findAll('book');
+  
   }
 }
