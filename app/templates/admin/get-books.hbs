@@ -32,8 +32,6 @@
                 class='form-check-input'
                 name='selectedBooks[]'
                 @checked={{book.isChecked}}
-                {{on "input" (fn this.getSelectedBooks book)}}
-              
               />
               <h4 class='card-title bookTitle'>{{book.bookName}}</h4>
               <h3 class='bookPrice mt-3'>${{book.price}}</h3>
@@ -64,13 +62,11 @@
       {{/each}}
     </div>
   {{else}}
-    <div class='container text-center position-absolute top-50 start-50 translate-middle'>
-      <img
-        src='/image/sad.png'
-        style='opacity: 0.2;width: 20%;height:30%;'
-      />
+    <div
+      class='container text-center position-absolute top-50 start-50 translate-middle'
+    >
+      <img src='/image/sad.png' style='opacity: 0.2;width: 20%;height:30%;' />
       <h4 style='opacity: 0.5;position:relative;top:20%;'>No books yet</h4>
     </div>
   {{/if}}
 </div>
-
